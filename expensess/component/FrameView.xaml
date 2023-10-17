@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:expensess.Viewmodel"
+             x:Class="expensess.component.FrameView">
+  <ContentView.Content>
+        <StackLayout Padding="0,10,0,0">
+            <Frame CornerRadius="20" BackgroundColor="#EDF1FA" HasShadow="True" BorderColor="#EDF1FA">
+                <Grid x:DataType="viewmodels:TransactionViewModel" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                  ColumnDefinitions="Auto,5,*,Auto" RowDefinitions="Auto,Auto">
+                    <Image Margin="-10,0,0,0" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"  
+                       Source="{Binding Img}" HeightRequest="50" ></Image>
+                    <Label Grid.Row="0" Grid.Column="2" Text="{Binding Name}"  FontAttributes="Bold" TextColor="#202020"></Label>
+                    <Label Grid.Row="1" Grid.Column="2" Text="{Binding Description}"  TextColor="Gray"></Label>
+                    <Label Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" Text="{Binding Amount}"
+                       FontAttributes="Bold" TextColor="#202020"></Label>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

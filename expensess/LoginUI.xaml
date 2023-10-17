@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="expensess.LoginUI"
+             BackgroundColor="#0741ad"
+             >
+    <ContentPage.Content>
+
+        <Grid HeightRequest="250" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+
+                </Grid.RowDefinitions>
+            <Image 
+                Grid.Row="0" 
+                Margin="0,20,0,20" 
+                Source="logoTracker.jpg"
+                Aspect="AspectFit" 
+                HeightRequest="190" 
+                WidthRequest="190"></Image>
+                <Frame Grid.Row="1"  Margin="20,30" BorderColor="#1C375C" HasShadow="True"  CornerRadius="50" >
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label 
+                            Grid.Row="0"  
+                            Text="Welcome Back!" 
+                            FontSize="24" 
+                            FontAttributes="Bold" 
+                            TextColor="#1C375C" 
+                            HorizontalOptions="CenterAndExpand"></Label>
+                        <Label 
+                            Grid.Row="1" 
+                            Margin="0,-15,0,0" 
+                            Text="Login in to account" 
+                            TextColor="#1C375C"  
+                            HorizontalOptions="CenterAndExpand"></Label>
+                    <Entry 
+                        Grid.Row="2" 
+                        Placeholder="Username" 
+                        x:Name="UsernameEntry" 
+                        Margin="0,20,0,0" 
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="FillAndExpand"></Entry>
+                        
+                    <Grid Grid.Row="3" >
+                        <Entry 
+  
+                            Placeholder="Password" 
+                            x:Name="PasswordEntry"  
+                            IsPassword="True" 
+                            HorizontalOptions="FillAndExpand" 
+                            VerticalOptions="FillAndExpand"></Entry>
+                        <Image Source="eye.png" IsVisible="true" x:Name="ShowPasswordImage" WidthRequest="20"
+                                HeightRequest="20" VerticalOptions="CenterAndExpand" HorizontalOptions="End" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnShowPasswordTapped" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+
+                    <Button Grid.Row="4" Text="Login" TextColor="White" BackgroundColor="#0741ad" CornerRadius="20" Clicked="OnLoginButtonClicked"></Button>
+
+                    <Label Grid.Row="7" Text="Forget Password" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" x:Name="forgetPasswordLabel">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ForgetPasswordLabel_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label Grid.Row="8"  Text="Don't have an account? Sign up here" HorizontalOptions="CenterAndExpand"></Label>
+
+                </Grid>
+                </Frame>
+            </Grid>
+      
+
+    </ContentPage.Content>
+</ContentPage>

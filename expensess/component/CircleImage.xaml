@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="expensess.component.CircleImage">
+  <ContentView.Content>
+        <StackLayout Padding="0,30,0,0" Margin="20,0,0,0">
+            <Frame x:Name="frame" HasShadow="True"  CornerRadius="100" HorizontalOptions="Center" Padding="0">
+                <Image x:Name="img" Aspect="AspectFill" />
+            </Frame>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

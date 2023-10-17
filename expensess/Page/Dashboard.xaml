@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:expensess.component"
+             x:Class="expensess.Page.Dashboard"
+              Shell.NavBarIsVisible="False"
+             BackgroundColor="white">
+    
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start"
+              RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,Auto">
+            <DatePicker x:Name="dt" IsVisible="false" DateSelected="dt_DateSelected"></DatePicker>
+
+            <Frame Grid.Row="0" VerticalOptions="End" BackgroundColor="#191A4C" Grid.ColumnSpan="2" HasShadow="True" 
+                   Padding="0" Margin="0,-20,0,40" CornerRadius="20" HeightRequest="350" >
+                <StackLayout HorizontalOptions="FillAndExpand" Margin="20,60,0,0" VerticalOptions="FillAndExpand">
+                    <Label Text="Welcome Back!" FontAttributes="Bold" FontSize="20" TextColor="white"></Label>
+                </StackLayout>
+
+            </Frame>
+            <control:CircleImage Grid.Row="0" Grid.Column="0" Margin="0,90,0,0"  
+            Image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWR7fU-Ju22niixgRowQPqmhmMbv-4aKkcJQ"  
+            FrameHeight="150" FrameWidth="100" CornerRadius="20" HorizontalOptions="Start"  VerticalOptions="EndAndExpand"
+                                 BorderColor="White"></control:CircleImage>
+            <StackLayout Spacing="0" Grid.Row="0" Grid.Column="1" VerticalOptions="EndAndExpand" HorizontalOptions="Center" Margin="0,0,30,60">
+                <Label Text="Alexandra Daddario" TextColor="white" FontAttributes="Bold" FontSize="20"></Label>
+                <Label Text="Available Balance:" TextColor="white"></Label>
+                <Label Text="$50,549.00" TextColor="white" FontAttributes="Bold" FontSize="20"></Label>
+            </StackLayout>
+            <Label Grid.Row="1" Grid.Column="0" Margin="20,0,0,0" x:Name="lblDate" VerticalOptions="Center" HorizontalOptions="Start" Text="12 Feb 2022" TextColor="#202020">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label>
+            <Button x:Name="btnNew" Grid.Row="1" Grid.Column="1" HeightRequest="40" Margin="0,0,20,0"   CornerRadius="20" 
+                    Text="New Transaction"  BackgroundColor="#202020" TextColor="White" Clicked="btnNew_Clicked"></Button>
+            <ScrollView Grid.Row="2" Grid.ColumnSpan="2">
+                <Grid HorizontalOptions="FillAndExpand"  Padding="20,0"  VerticalOptions="Start"
+              RowDefinitions="Auto" ColumnDefinitions="*">
+
+                    <ListView x:Name="listView" Grid.Row="0" Grid.ColumnSpan="2" HasUnevenRows="True" SeparatorVisibility="None" ItemSelected="listView_ItemSelected" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <control:FrameView></control:FrameView>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

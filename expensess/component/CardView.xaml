@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:expensess.Viewmodel"
+             x:Class="expensess.component.CardView">
+  <ContentView.Content>
+        <StackLayout x:DataType="viewmodels:CardViewModel" Padding="10,20">
+            <Frame CornerRadius="20"  BackgroundColor="{Binding BgColor}" HeightRequest="120" HasShadow="True" BorderColor="{Binding BgColor}">
+                <Grid  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                  ColumnDefinitions="Auto,Auto" RowDefinitions="Auto,Auto,Auto">
+                    <Label Grid.Row="0" Grid.Column="0" Text="Available Balance"   TextColor="White"></Label>
+                    <Label Grid.Row="1" Grid.Column="0" Text="{Binding Balance}" FontAttributes="Bold" FontSize="20" TextColor="White"></Label>
+                    <Label Grid.Row="2" Grid.Column="0" Text="{Binding Number}"  FontAttributes="Bold" FontSize="20" TextColor="White"></Label>
+                    <Label Grid.Row="3" Grid.Column="1" Grid.RowSpan="2" Text="{Binding Name}"
+                       FontAttributes="Bold" TextColor="White"></Label>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="expensess.view.ProfilePage">
+    <ContentPage.Content>
+        <StackLayout Padding="30" Spacing="10" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+            <Label Text="Perfil de Usuario" TextColor="#0741ad" FontSize="24" HorizontalOptions="Center" Margin="0,20,0,20" />
+
+            <Label Text="Nombre: " TextColor="Black" FontSize="18" />
+            <Entry Text="{Binding fullname}" x:Name="nombretxt" TextColor="#0741ad" FontSize="18" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+
+            <Label Text="Email: " TextColor="Black" FontSize="18" />
+            <Entry Text="{Binding email}" x:Name="emailtxt" TextColor="#0741ad" FontSize="18" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+
+            <Label Text="Telefono: " TextColor="Black" FontSize="18" />
+            <Entry Text="{Binding telefono}" x:Name="telefonotxt" TextColor="#0741ad" FontSize="18" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+
+
+            <Grid  >
+                <Entry 
+  
+                        Placeholder="Password" 
+                        Text="{Binding password}"
+                        x:Name="PasswordEntry"  
+                        IsPassword="True" 
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="FillAndExpand"></Entry>
+                                    <Image Source="eye.png" IsVisible="true" x:Name="ShowPasswordImage" WidthRequest="20"
+                            HeightRequest="20" VerticalOptions="CenterAndExpand" HorizontalOptions="End" >
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnShowPasswordTapped" />
+                                        </Image.GestureRecognizers>
+                                    </Image>    
+            </Grid>
+            <Button 
+                Text="Guardar Cambios" 
+                Clicked="Button_Clicked" 
+                BackgroundColor="#0741ad" 
+                TextColor="White" 
+                Margin="20,20,20,0" 
+                CornerRadius="20"
+                />
+
+            <Button Text="Logout" x:Name="logout" Clicked="logout_Clicked" BackgroundColor="#e74c3c" TextColor="White" Margin="20,20,20,0" CornerRadius="20" />
+         
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
