@@ -6,7 +6,7 @@
              >
     <ContentPage.Content>
 
-        <Grid HeightRequest="250" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+        <Grid HeightRequest="350" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
@@ -19,7 +19,7 @@
                 Aspect="AspectFit" 
                 HeightRequest="190" 
                 WidthRequest="190"></Image>
-                <Frame Grid.Row="1"  Margin="20,30" BorderColor="#1C375C" HasShadow="True"  CornerRadius="50" >
+                <Frame Grid.Row="1"  Margin="20,9" BorderColor="#1C375C" HasShadow="True"  CornerRadius="50" >
                     <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -71,13 +71,17 @@
 
                     <Button Grid.Row="4" Text="Login" TextColor="White" BackgroundColor="#0741ad" CornerRadius="20" Clicked="OnLoginButtonClicked"></Button>
 
-                    <Label Grid.Row="7" Text="Forget Password" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" x:Name="forgetPasswordLabel">
+                    <Label Grid.Row="5" Text="Forget Password" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" x:Name="forgetPasswordLabel">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="ForgetPasswordLabel_Tapped" />
                         </Label.GestureRecognizers>
                     </Label>
 
-                    <Label Grid.Row="8"  Text="Don't have an account? Sign up here" HorizontalOptions="CenterAndExpand"></Label>
+                    <StackLayout Grid.Row="6" Orientation="Horizontal" HorizontalOptions="Center" >
+                        <Label  Text="Don't have an account?" HorizontalOptions="Center"/>
+                        <Label  Text="Sign up !!" HorizontalOptions="Center" TextColor="#0741ad"/>
+
+                    </StackLayout>
 
                 </Grid>
                 </Frame>

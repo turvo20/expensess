@@ -1,12 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="expensess.Page.VerificationPage">
+             x:Class="expensess.Page.VerificationPage"
+             BackgroundColor="#0741ad"
+             >
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" Padding="20">
-            <Label Text="Introduce el código de verificación que has recibido por correo electrónico." />
-            <Entry Placeholder="Código de Verificación" x:Name="verificationCodeEntry" Keyboard="Numeric" />
-            <Button Text="Validar Código" Clicked="ValidarCodigoClicked" />
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="20" >
+            <Label Text="Introduce el código de verificación que has recibido por correo electrónico." FontAttributes="Bold" FontSize="16" TextColor="White" />
+            <StackLayout  Padding="10">
+                <Entry Placeholder="Código de Verificación" PlaceholderColor="White" TextColor="Red" x:Name="verificationCodeEntry" Keyboard="Numeric" />
+                <Button Text="Validar Código" BackgroundColor="White" TextColor="#0741ad" CornerRadius="6" Clicked="ValidarCodigoClicked" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
